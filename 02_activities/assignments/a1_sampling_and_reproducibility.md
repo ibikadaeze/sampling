@@ -10,10 +10,34 @@ Modify the number of repetitions in the simulation to 100 (from the original 100
 
 Alter the code so that it is reproducible. Describe the changes you made to the code and how they affected the reproducibility of the script file. The output does not need to match Whitby’s original blogpost/graphs, it just needs to produce the same output when run multiple times
 
-# Author: YOUR NAME
+# Author: ADAEZE IBIK
 
 ```
-Please write your explanation here...
+Sampling Stages in the model
+
+Infection sampling
+-Sample size: 10% of all attendees (ATTACK_RATE = 0.10) using the function 'np.random.choice()'
+-Sampling frame: All 1000 event attendees which includes 200 weddings and 800 brunches.
+-Distribution: Random selection without replacement.
+-This represents the random infection process where some attendees get infected regardless of event type.
+
+Primary contact tracing sampling
+-Sample size: 20% of infected individuals (TRACE_SUCCESS = 0.20)using function 'np.random.rand()'
+-Sampling frame: All infected individuals.
+-Distribution: Binomial distribution
+-This represents the imperfect process where only some infections are successfully traced.
+
+Secondary contact tracing sampling
+-Sample size: All infected attendees of events with >= 2 primary traces (If two infections are independently traced to the same source event, a special effort is made to test every person who attended that event)---this is the same size as the initial infected sample.
+-Sampling frame: Infected individuals at events that meet the above threshold.
+-Distribution: Non-probabilistic methods since it depends on the primary contact tracing.
+-This overestimate the proportion of cases that result from weddings (and equivalently, underestimate this that come from brunches).
+
+The code whiteby_covid_tracing.py does not reproduce the plot in the blog post exactly but it is similar since it has similar structure and is centered around 20% of infections from weddings.
+
+When I re-run the script with m=100, the plot still maintained similar pattern with the original plot since it centers around 20% but the noise in the distribution increased. The overal shape of the plot changed at each run as a result of random sampling. This also led to increased variation and extreme outliers.
+
+To make sure that teh code can reproduce its result multiple times, I added a random seed to teh script. This ensured that I could get teh same result as intended many times.
 
 ```
 
