@@ -33,37 +33,52 @@ For the **Canadian General Social Survey on Giving, Volunteering, and Participat
 10. Cleaning, imputation, etc
 11. Sources of error
 12. Limitations, known biases, etc
-13. Link to documentation and any additional sources used
 
 
 # Your Changes
 
 ## Part A - Survey Design: 
 
-The number of your chosen topic: `#`
+The number of your chosen topic: `#1`
 
 Describe the purpose of your survey:
 ```
-write your answer here...
+The purpose of this survey is to investigate the factors affecting the high rate of turn-over among employees especially within the entry- and lower- level roles and to discover ways to improve employees job staisfaction. 
 ```
 
 Describe your target population, sampling frame, sampling units, and observational units:
 ```
-write your answer here...
+Target population: All employees (past and current) that worked for the company within the last 1 year.
+sampling frame: HR Employees record across all departments for entry- and lower- level roles. This include past employees that are probably not reachable anymore, hence they may not be able to fill the survey.
+sampling units: Depending on the sampling method used
+    For random sampling: individual employee selected at random from the sample frame.
+    For stratified sampling: One can divide the survey among entry/lower-level and senior-level strata irrespective of department and then select individual employees randomly from each stratum.
+    For cluster sampling: One can divide the sample into departments and select some departments, whose individual members will be sent the survey.
+Observational units: The individual employees that actually fills the survey.
+
 ```
 
 Your 5-10 question survey:
 ```
-1. write your question here...
-2. write your question here...
-3. write your question here...
-4. write your question here...
-5. write your question here...
-6. write your question here... (optional)
-7. write your question here... (optional)
-8. write your question here... (optional)
-9. write your question here... (optional)
-10. write your question here... (optional)
+1. How satisfied are you with your current role? [1=very disatisfied   5-very satisfied]
+
+2. What are the top 3 factors affecting your job satisfaction in this company? [list to select from: Salary & benefits, Work-life balance, Career growth opportunities, Relationship with manager, Team culture, Job responsibilities]
+
+3. Have you considered leaving the company in the past 6 months? [Yes, No, Maybe]
+
+4. If yes, what are the primary reasons? [select all that apply: Low compensation, Lack of career advancement, Poor management, High workload/stress, sudden lass of motivation/interest, Better opportunities elsewhere, other reasons..]
+
+5. How supported do you feel by your direct manager? [1- not at all,  5- very supported]
+
+6. What department do you belong to in this company? [drop down menu of depertments to select from] (optional)
+
+7. How long have you worked for this company? [drop down menu of range of times to select from] (optional)
+
+8. What is one change the company could make to improve your experience? (optional)
+
+9. Additional Comments (optional)
+
+10. What level is your role? [entry-/lower level, mid/senior level] For stratified sampling 
 ```
 
 ## Part B - Survey Evaluation:
@@ -71,7 +86,43 @@ Your 5-10 question survey:
 Identify and describe survey features:
 
 ```
-write your answer here
+1. Sample type: Stratified two-stage probability sampling and Rejective sampling
+
+2. Sample size: Field sample: 50,000 units from addresses/phone numbers, 24,000 of completed questionnaires was expected, but the overall response rate is 41.9% of 50,000 = 20,950 resulting in fewer completed surveys than expected.
+
+3. Target population: All individuals aged 15 years and above in Canada’s 10 provinces.
+
+4. Sampling frame: Statistics Canada’s dwelling frame, Landline/cellular numbers from Census 
+
+5. Survey mode(s) : online questionnaire, Computer-assisted telephone interviewing
+
+6. Timeline: To be conducted every 5 years (last in 2018) from September to December. The survey reference period should be within the past 12 months before the interview.
+
+7. Response rate: 41.9%
+
+8. Weights: if the total population of Canada in 2018 was 37 million, and ~32 million for those 15 years and above, we can assume that the population after excluding territories and institutions is 30 million. Since the expected number of responses was 24,000, the weight per person (24,000/~30,000) would be ~0.0008. This means that one respondendt represnet about 1250 people from the population that did not get the survey. Bootstrap weights was also used for design-based variance estimation.
+
+9. Data processing: For the data to be processed with minimal error and bias, the following methods were employed to process the data:
+Automated edits: Range checks, flow consistency, and family relationship validation.
+Manual review: Resolving flagged inconsistencies or interviewer comments.
+Tax data linkage: 81.9% of respondents linked to 2017 T1FF tax records for income data.
+
+10. Cleaning, imputation, etc: Missing data was filled using nearest-neighbor matching. The Imputation was done in nine steps. The GSS GVP 2018 used a nine-step imputation process to address missing data, starting with personal and family income, followed by formal volunteering (Steps 2-4), informal volunteering (Steps 5-6), and finally donation and solicitation variables (Steps 7-9). The method relied primarily on donor imputation, matching incomplete records with similar respondents' data to preserve accuracy. Mean imputation was used where donor matching was infeasible.
+
+
+11. Sources of error: 
+Sampling error: This was quantified through bootstrap variance estimation.
+
+Non-sampling errors: These includes Coverage bias(Excludes non-telephone households and institutionalized populations), non-response bias (Addressed through weighting adjustments using administrative data e.g., income/household composition of non-respondents), measurement error (Self-reported data e.g., volunteering hours may be inaccurate).
+
+12. Limitations, known biases, etc: These are the sources biases and limitations of this survey;
+coverage limitations, self-reporting bias, low response rate, and tax linkage gaps.
+
+
+13. Link to documentation and any additional sources used
+Total population of Canada in 2018 is about 37 million https://www150.statcan.gc.ca/n1/daily-quotidien/180927/dq180927c-eng.htm
+Approximate population of those 15 years and above = 32 million https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1710000501
+
 ```
 
 ## Rubric
